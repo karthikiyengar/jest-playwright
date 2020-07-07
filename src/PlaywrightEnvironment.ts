@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import type { Event, State } from 'jest-circus'
+import path from 'path'
 import type { Browser, Page, BrowserContext } from 'playwright-core'
 import type {
   JestPlaywrightConfig,
@@ -57,7 +58,10 @@ const getBrowserPerProcess = async (
 
     if (launchType === PERSISTENT) {
       // @ts-ignore
-      return playwrightInstance.launchPersistentContext(userDataDir!, options)
+      return playwrightInstance.launchPersistentContext(
+        path.join(userDataDir!, Date.now().toString()),
+        options,
+      )
     }
   }
 

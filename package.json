@@ -19,6 +19,9 @@
     "url": "https://github.com/playwright-community/jest-playwright.git",
     "type": "git"
   },
+  "publishConfig": {
+    "registry": "https://artifactory.klarna.net/artifactory/api/npm/l-npm-desktop-shopping-production/"
+  },
   "homepage": "https://github.com/playwright-community/jest-playwright#readme",
   "scripts": {
     "start": "npm run build -- --watch",
